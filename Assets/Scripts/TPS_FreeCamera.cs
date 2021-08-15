@@ -63,7 +63,7 @@ public class TPS_FreeCamera : MonoBehaviour
             {
                 tmp = new Vector3(0, player.transform.localEulerAngles.y - Time.deltaTime * 200, 0);
                 player.transform.localEulerAngles = tmp;
-                Debug.LogError(player.transform.localEulerAngles.y + ";;" + (Mathf.Abs(player.transform.localEulerAngles.y) - 0));
+                //Debug.LogError(player.transform.localEulerAngles.y + ";;" + (Mathf.Abs(player.transform.localEulerAngles.y) - 0));
             }
         }
         else
