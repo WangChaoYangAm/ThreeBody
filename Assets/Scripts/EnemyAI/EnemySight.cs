@@ -73,7 +73,7 @@ public class EnemySight : MonoBehaviour
 
         if (PlayerInAround)
         {
-            AlertImg.transform.position = Camera.main.WorldToScreenPoint(transform.position+new Vector3(0,MeshAgent.height,0)) + AlertImgOffset;
+            AlertImg.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, MeshAgent.height, 0)) + AlertImgOffset;
             #region 视觉模拟
             Vector3 forward = transform.forward;
             playerDir_X = new Vector3(other.transform.position.x, forward.y, other.transform.position.z) - new Vector3(transform.position.x, forward.y, transform.position.z);
@@ -229,7 +229,9 @@ public class EnemySight : MonoBehaviour
                     Gizmos.DrawLine(wayPoints[i - 1], wayPoints[i]);
                     //Gizmos.DrawCube(wayPoints[i], Vector3.one);
                 }
+
             }
+
 
         }
 
