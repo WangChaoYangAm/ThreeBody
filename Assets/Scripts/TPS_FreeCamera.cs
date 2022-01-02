@@ -32,7 +32,8 @@ public class TPS_FreeCamera : MonoBehaviour
         Vector3 tmpModelEuler = player.transform.eulerAngles;//存储人物模型的欧拉角，以便后面在欧拉角被改动后重置它
         playerHandle.transform.Rotate(Vector3.up, InputX * Time.deltaTime * RotateSpeed);
         tmpEulerX -= InputY * Time.deltaTime * RotateSpeed;
-        tmpEulerX = Mathf.Clamp(tmpEulerX, -85, 85);
+        //tmpEulerX = Mathf.Clamp(tmpEulerX, -85, 85);
+        tmpEulerX = Mathf.Clamp(tmpEulerX, -0, 85);
         cameraHandle.transform.localEulerAngles = new Vector3(tmpEulerX, 0, 0);
         player.transform.eulerAngles = tmpModelEuler;//重置欧拉角，营造出一种人物未动的效果，实际上playerHandle已发生转向
         if (Input.GetKey(KeyCode.W))

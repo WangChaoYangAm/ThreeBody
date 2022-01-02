@@ -83,6 +83,7 @@ public class PlayerActor : MonoBehaviour
     }
     void OnGroundEnter()
     {
+        Debug.Log("Ò»ÖÂÐÔ");
         PI.InputEnable = true;
         lockPlanar = false;
     }

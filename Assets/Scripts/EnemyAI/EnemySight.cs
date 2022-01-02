@@ -22,7 +22,8 @@ public class EnemySight : MonoBehaviour
     public Transform[] BodyCheckPoints;
     Vector3 playerDir_X;//水平方向偏角范围
     Vector3 playerDir_Y;//垂直方向偏角范围
-    private bool isInSight, PlayerInAround;
+    public bool isInSight;
+    private bool PlayerInAround;
     [SerializeField]
     private Transform TargetTrans;
     [Header("听觉系统")]
@@ -130,6 +131,8 @@ public class EnemySight : MonoBehaviour
             //Debug.LogFormat("AlertSpeed为{0},AlertRatio为{1},CheckBodyPoints{2}", AlertSpeed, AlertRatio, CheckBodyPoints());
             if (BodyCheckPoints.Length >= 0)
             {
+                isInSight = false;
+
                 if (AlertValue < MaxAlertValue)//&& CheckBodyPoints()暂时将该条件拿出来
                 {
                     AlertValue += Time.deltaTime * AlertSpeed * AlertRatio;
@@ -141,7 +144,8 @@ public class EnemySight : MonoBehaviour
                 }
                 else
                 {
-                    //已处于满境界值状态
+                    //已处于满警戒值状态
+                    isInSight = true;
                 }
 
 
